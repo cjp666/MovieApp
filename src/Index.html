@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html ng-app="movieApp">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Movie App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+	<style type="text/css">
+		.container { max-width: 900px; }
+	</style>
+</head>
+<body>
+
+<div class="header">
+	<div class="container">
+		<div class="page-header">
+			<h1><a href="#/">MovieApp</a>
+			</h1>
+			<p class="lead">Your Resource for Movie Data</p>
+		</div>
+		<div ng-controller="SearchController">
+			<form class="form-inline-lg" ng-submit="search()">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="file title..." ng-model="query"
+					       ng-keyup="keyup()" ng-keydown="keydown()"/>
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button" ng-click="search()">Go!</button>
+					</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<br/>
+
+<div class="container">
+	<div ng-view=""></div>
+</div>
+
+<br />
+
+<div class="footer">
+	<div class="container">
+		<p>move data from http://www.omdbapi.com</p>
+	</div>
+</div>
+
+	<script src="../lib/angular-1.5.0/angular.js"></script>
+	<script src="../lib/angular-1.5.0/angular-route.js"></script>
+	<script src="../lib/angular-1.5.0/angular-resource.js"></script>
+	<script src="../lib/bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+<script src="movie-app/app.js"></script>
+<script src="movie-core/service.js"></script>
+<script src="omdb/service.js"></script>
+<script src="movie-app/search.controller.js"></script>
+<script src="movie-app/results.controller.js"></script>
+<script src="movie-app/home.controller.js"></script>
+<script src="movie-app/movie-result.directive.js"></script>
+
+</body>
+</html>
