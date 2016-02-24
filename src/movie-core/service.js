@@ -13,7 +13,8 @@
 				},
 				query: {
 					method: 'GET',
-					headers: { 'authToken': token }
+					headers: { 'authToken': token },
+					isArray: true
 				},
 				save: {
 					method: 'POST',

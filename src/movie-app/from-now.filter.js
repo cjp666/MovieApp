@@ -2,7 +2,7 @@
 	.filter('fromNow', function () {
 		var filter = function (value, baseDate) {
 			if (!value) {
-				throw 'date value cannot be undefined';
+				return "";
 			}
 
 			var date = value;

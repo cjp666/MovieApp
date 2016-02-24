@@ -7,8 +7,8 @@
 		fromNow = _$filter_('fromNow');
 	}));
 
-	it('should throw an error for undefined', function () {
-		expect(fromNow).toThrow('date value cannot be undefined');
+	it('should not throw an error for undefined', function () {
+		expect(fromNow).not.toThrow();
 	});
 
 	it('should return same value for invalid date', function () {
